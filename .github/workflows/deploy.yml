@@ -26,10 +26,10 @@ jobs:
         uses: actions/setup-node@v3
 
       - name: Install dependencies
-        run: yarn
+        run: NODE_OPTIONS=--openssl-legacy-provider pnpm i
 
       - name: Build
-        run: yarn build
+        run: NODE_OPTIONS=--openssl-legacy-provider pnpm run build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.4.0
